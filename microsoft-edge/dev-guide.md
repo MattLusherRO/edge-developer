@@ -20,10 +20,27 @@ Here are the changes shipped with the current release of the Microsoft Edge plat
 ### New features
 
 #### CSS Custom Properties
+Microsoft Edge now supports [CSS Custom Properties](https://drafts.csswg.org/css-variables/), a.k.a CSS Variables. CSS Variables allow you to create custom CSS properties that can be reused throughout stylesheets to help reduce the amount of duplicate data, like repeated colors. Using CSS Variables is simple: 
+
+```css
+// define a custom property by using two dashes and assign it a value
+body {   
+   --default-color: #3390b1
+}
+
+// reference it in your stylesheet with the “var()” function,
+h1 { 
+   color: var(--default-color); 
+}
+```  
+You can test out CSS Custom Properties in Microsoft Edge build #####+. 
+
 
 #### Intersection Observer
+Microsoft Edge fully supports the [Intersection Observer API](https://wicg.github.io/IntersectionObserver/) specification beginning in Build ####+. The Intersection Observer API allows you to asynchronously query the position and visibility of DOM elements relative to other elements or the global viewport. This API eliminates the need for custom expensive code by creating a method to efficiently notify elements when they are in view. 
 
 #### Payment Request API
+The [Payment Request API](http://www.w3.org/TR/payment-request/) is now supported in Microsoft Edge, enabling simpler checkout and payments on the web with Microsoft Wallet on Windows 10 PCs and Phones. This API enables Microsoft Edge to act as an intermediary between merchants, consumers, and the payment methods (e.g. credit cards) that consumers have stored in the cloud. For more information on the Payment Request API, check out the blog post: [Simpler web payments: Introducing the Payment Request API](https://blogs.windows.com/msedgedev/2016/12/15/payment-request-api-edge/) and the [Payment Request API](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/device/payment-request-api) Dev Guide article. 
 
 #### Service Worker
 
