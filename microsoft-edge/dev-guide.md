@@ -71,6 +71,10 @@ Sites already using CSP 1 should continue to work with Microsoft Edge support fo
 4. CSP violation reporting: A new event, SecurityPolicyViolationEvent is now fired upon CSP violations. The earlier mechanism for CSP reporting, `report-uri`, continues to be supported. Several new fields have been added to the violation reports common to both, including `effectiveDirective` (the policy that was violated), `statusCode` (the HTTP response code), `sourceFile` (the URL of the offending resource), `lineNumber`, and `columnNumber`.
 
 #### Web Authentication
+Edge support for the emerging [Web Authentication API](./dev-guide/device/web-authentication.md) using [Windows Hello](http://go.microsoft.com/fwlink/p/?LinkID=624961) biometrics has been updated with the following changes:
+ - The experimental Web Authentication API is turned off by default ships behind a flag (type `about:flags` in your address bar to turn on the feature).
+ - You can now use the non-prefixed, standards-based APIs defined in the specification. The current Edge implementation [maps to the API definitions](http://www.w3.org/TR/2016/WD-webauthn-20160928/#idl-index) of a recent snapshot version and will continue to evolve with the spec.
+ - The original MS-prefixed APIs (the `MSCredentials` interface and related) are still available in Edge (on by default, not behind flag) but are no longer getting updated and are likely to be removed in the future. The companion [webauthn.js polyfill](https://github.com/adrianba/fido-snippets/blob/master/polyfill/webauthn.js) is also still available, but unlikely to receive further updates.
 
 #### WebDriver
 
