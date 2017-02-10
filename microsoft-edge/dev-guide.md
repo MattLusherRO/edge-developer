@@ -44,7 +44,18 @@ The [Payment Request API](http://www.w3.org/TR/payment-request/) is now supporte
 
 #### WebRTC
 
+The WebRTC 1.0 API is now supported in Build #####+ on Microsoft Edge. With WebRTC, plugins are no longer needed to enable video communications across browsers and platforms. 
+Edge's implementation provides support for peer-to-peer audio and video based on a subset of the W3C WebRTC-PC API from 2015. This provides compatibility with websites using legacy implementations of WebRTC. See the [WebRTC API reference](https://msdn.microsoft.com/library/mt806139(v=vs.85).aspx) for specifics.
+
+To take advantage of the most advanced features in Microsoft Edge, we recommend using the [ORTC (Object real time communication) API](./dev-guide/realtime-communication/object-rtc-api.md). The ORTC API is better suited for situations where you want to set up group audio and video calls, or directly control individual transport, sender, and receiver objects.
+
+For more info about the WebRTC 1.0 API, check out the blog post: [Introducing WebRTC 1.0 and interoperable real-time communications in Microsoft Edge](https://blogs.windows.com/msedgedev/2017/01/31/introducing-webrtc-microsoft-edge/#k8XMeWKyZDQDPYR4.97).
+
 #### WebVR
+
+New to Microsoft Edge as of Build #####+ is added support for WebVR, an experimental API that connects virtual reality (VR) head mounted displays and Edge. This connection enables VR content to be experienced within a website, meaning immersive VR experiences are no longer limited to desktop applications. 
+
+Virtual reality in Edge is handled with WebGL, a JavaScript API for rendering 3D and 2D graphics. WebGL applications and applications built with WebGL libraries like Three.JS are supported. Once connected, WebVR sends visuals corresponding to the position and sensor information around the headset. The WebVR API also supports gamepad controls thanks to an extensions to the [Gamepad API](./dev-guide/dom/gamepad-api.md).
 
 ### Updated features
 
@@ -63,7 +74,23 @@ Sites already using CSP 1 should continue to work with Microsoft Edge support fo
 
 #### WebDriver
 
-#### WebGL
+Beginning in Build #####+, Microsoft Edge introduces a handful of WebDriver updates including support for the silent command line flag and new command endpoints:
+
+Method | URI Template | Command
+:----- | :----------  | :--------
+POST | /session/{session id}/alert/accept | [Accept Alert](https://w3c.github.io/webdriver/webdriver-spec.html#dfn-accept-alert)
+POST | /session/{session id}/alert/dismiss | [Dismiss Alert](https://w3c.github.io/webdriver/webdriver-spec.html#dfn-dismiss-alert)
+GET | /session/{session id}/alert/text | [Get Alert Text](https://w3c.github.io/webdriver/webdriver-spec.html#dfn-get-alert-text)
+POST | /session/{session id}/alert/text | [Send Alert Text](https://w3c.github.io/webdriver/webdriver-spec.html#dfn-send-alert-text)
+POST | /session/{session id}/execute/async | [Execute Async Script](https://w3c.github.io/webdriver/webdriver-spec.html#dfn-execute-async-script)
+POST | /session/{session id}/execute/sync | [Execute Script](https://w3c.github.io/webdriver/webdriver-spec.html#dfn-execute-script)
+GET | /session/{session id}/window | [Get Window Handle](https://w3c.github.io/webdriver/webdriver-spec.html#get-window-handle)
+GET | /session/{session id}/window/handles | [Get Window Handles](https://w3c.github.io/webdriver/webdriver-spec.html#dfn-get-window-handles)
+
+
+
+For more info and the status of other WebDriver features, check out [WebDriver commands](./webdriver-commands.md).
+
 
 ## Previous EdgeHTML releases
 [EdgeHTML 13 / Windows build 14393 (11/2015)](https://blogs.windows.com/msedgedev/2015/11/16/introducing-edgehtml-13-our-first-platform-update-for-microsoft-edge/#TuusgqsWj8X6pDcD.97)
