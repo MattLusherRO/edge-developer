@@ -14,7 +14,7 @@ This guide provides an overview of the developer features and standards included
 
 ## What's new in EdgeHTML 15
 Here are the changes shipped with the current release of the Microsoft Edge platform,
- as of the [Windows Creators Update(MM/YYYY)](). For changes in Windows Insider Preview builds, see
+ as of the [Windows Creators Update(MM/YYYY), build #####](). For changes in Windows Insider Preview builds, see
  the Microsoft Edge [Changelog](https://developer.microsoft.com/en-us/microsoft-edge/platform/changelog/).
 
 ### New features
@@ -37,23 +37,24 @@ You can test out CSS Custom Properties in Microsoft Edge build #####+.
 
 
 #### Intersection Observer
-Microsoft Edge fully supports the [Intersection Observer API](https://wicg.github.io/IntersectionObserver/) specification beginning in Build #####+. The Intersection Observer API allows you to asynchronously query the position and visibility of DOM elements relative to other elements or the global viewport. This API eliminates the need for custom expensive code by creating a method to efficiently notify elements when they are in view. 
+EdgeHTML 15 introduces the [Intersection Observer API](https://wicg.github.io/IntersectionObserver/) specification. The Intersection Observer API allows you to asynchronously query the position and visibility of DOM elements relative to other elements or the global viewport. This API eliminates the need for custom expensive code by creating a method to efficiently notify elements when they are in view. 
 
 #### Payment Request API
-The [Payment Request API](http://www.w3.org/TR/payment-request/) is now supported in Microsoft Edge, enabling simpler checkout and payments on the web with Microsoft Wallet on Windows 10 PCs and Phones. This API enables Microsoft Edge to act as an intermediary between merchants, consumers, and the payment methods (e.g. credit cards) that consumers have stored in the cloud. For more information on the Payment Request API, check out the blog post: [Simpler web payments: Introducing the Payment Request API](https://blogs.windows.com/msedgedev/2016/12/15/payment-request-api-edge/) and the [Payment Request API](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/device/payment-request-api) Dev Guide article. 
+The [Payment Request API](http://www.w3.org/TR/payment-request/) is now supported, enabling simpler checkout and payments on the web with Microsoft Wallet on Windows 10 PCs and Phones. This API enables Microsoft Edge to act as an intermediary between merchants, consumers, and the payment methods (e.g. credit cards) that consumers have stored in the cloud. For more information on the Payment Request API, check out [Simpler web payments: Introducing the Payment Request API](https://blogs.windows.com/msedgedev/2016/12/15/payment-request-api-edge/) and the [Payment Request API](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/device/payment-request-api) developer guide. 
 
-#### WebRTC
+#### WebRTC and interoperable RTC video codec support
 
-The WebRTC 1.0 API is now supported in Build #####+ on Microsoft Edge. With WebRTC, plugins are no longer needed to enable video communications across browsers and platforms. 
-Edge's implementation provides support for peer-to-peer audio and video based on a subset of the W3C WebRTC-PC API from 2015. This provides compatibility with websites using legacy implementations of WebRTC. See the [WebRTC API reference](https://msdn.microsoft.com/library/mt806139(v=vs.85).aspx) for specifics.
+EdgeHTML 15 supports a subset of the WebRTC 1.0 API for interoperability with applications built with earlier versions of the W3C WebRTC-PC API circa 2015. See the [WebRTC API reference](https://msdn.microsoft.com/library/mt806139(v=vs.85).aspx) for details.
 
-To take advantage of the most advanced features in Microsoft Edge, we recommend using the [ORTC (Object real time communication) API](./dev-guide/realtime-communication/object-rtc-api.md). The ORTC API is better suited for situations where you want to set up group audio and video calls, or directly control individual transport, sender, and receiver objects.
+To take advantage of our most advanced features in peer-to-peer audio and video communication, we recommend using the [Object Real-Time Communication) API](./dev-guide/realtime-communication/object-rtc-api.md). The ORTC API is better suited for situations where you want to set up group audio and video calls, or directly control individual transport, sender, and receiver objects.
 
-For more info about the WebRTC 1.0 API, check out the blog post: [Introducing WebRTC 1.0 and interoperable real-time communications in Microsoft Edge](https://blogs.windows.com/msedgedev/2017/01/31/introducing-webrtc-microsoft-edge/#k8XMeWKyZDQDPYR4.97).
+The Microsoft Edge supports both H.264/AVC and VP8 video with ORTC and WebRTC 1.0, and provides the following features in support of both codec types: [abs-send-time](https://webrtc.org/experiments/rtp-hdrext/abs-send-time/), [goog-remb](https://tools.ietf.org/html/draft-alvestrand-rmcat-remb-03), [Picture Loss Indication and Generic NACK feedback](https://tools.ietf.org/html/rfc4585), [RTP Retransmission](https://tools.ietf.org/html/rfc4588). 
+
+For more info, see [Introducing WebRTC 1.0 and interoperable real-time communications in Microsoft Edge](https://blogs.windows.com/msedgedev/2017/01/31/introducing-webrtc-microsoft-edge/#k8XMeWKyZDQDPYR4.97).
 
 #### WebVR
 
-New to Microsoft Edge as of Build #####+ is added support for WebVR, an experimental API that connects virtual reality (VR) head mounted displays and Edge. This connection enables VR content to be experienced within a website, meaning immersive VR experiences are no longer limited to desktop applications. 
+Microsoft Edge now has support for WebVR, an experimental API that connects virtual reality (VR) head mounted displays and Edge. This connection enables VR content to be experienced within a website, meaning immersive VR experiences are no longer limited to desktop applications. 
 
 Virtual reality in Edge is handled with WebGL, a JavaScript API for rendering 3D and 2D graphics. WebGL applications and applications built with WebGL libraries like Three.JS are supported. Once connected, WebVR sends visuals corresponding to the position and sensor information around the headset. The WebVR API also supports gamepad controls thanks to an extensions to the [Gamepad API](./dev-guide/dom/gamepad-api.md).
 
@@ -78,7 +79,7 @@ Edge support for the emerging [Web Authentication API](./dev-guide/device/web-au
 
 #### WebDriver
 
-Beginning in Build #####+, Microsoft Edge introduces a handful of WebDriver updates including support for the silent command line flag and new command endpoints:
+EdgeHTML 15 brings a handful of WebDriver updates including support for the silent command line flag and new command endpoints:
 
 Method | URI Template | Command
 :----- | :----------  | :--------
@@ -90,8 +91,6 @@ POST | /session/{session id}/execute/async | [Execute Async Script](https://w3c.
 POST | /session/{session id}/execute/sync | [Execute Script](https://w3c.github.io/webdriver/webdriver-spec.html#dfn-execute-script)
 GET | /session/{session id}/window | [Get Window Handle](https://w3c.github.io/webdriver/webdriver-spec.html#get-window-handle)
 GET | /session/{session id}/window/handles | [Get Window Handles](https://w3c.github.io/webdriver/webdriver-spec.html#dfn-get-window-handles)
-
-
 
 For more info and the status of other WebDriver features, check out [WebDriver commands](./webdriver-commands.md).
 
