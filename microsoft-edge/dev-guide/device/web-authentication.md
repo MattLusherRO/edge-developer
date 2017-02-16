@@ -139,7 +139,7 @@ BufferSource attestationChallenge,
         unsigned long timeoutSeconds;
         USVString rpId;
         sequence<ScopedCredentialDescriptor> excludeList;
-	WebAuthnExtensions extensions;
+        WebAuthnExtensions extensions;
     };
 
     interface WebAuthnAssertion {
