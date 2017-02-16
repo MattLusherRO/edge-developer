@@ -107,7 +107,8 @@ Here is a snapshot of Web Authentication API support as of EdgeHTML 15 (Windows 
         Promise<ScopedCredentialInfo> makeCredential(
             Account accountInformation,
             sequence<ScopedCredentialParameters> cryptoParameters,
-            BufferSource attestationChallenge,
+
+BufferSource attestationChallenge,
             optional ScopedCredentialOptions options
         );
         Promise<WebAuthnAssertion> getAssertion(
@@ -137,7 +138,8 @@ Here is a snapshot of Web Authentication API support as of EdgeHTML 15 (Windows 
     dictionary ScopedCredentialOptions {
         unsigned long timeoutSeconds;
         USVString rpId;
-        sequence<ScopedCredentialDescriptor> excludeList;        WebAuthnExtensions extensions;
+        sequence<ScopedCredentialDescriptor> excludeList;
+	WebAuthnExtensions extensions;
     };
 
     interface WebAuthnAssertion {
