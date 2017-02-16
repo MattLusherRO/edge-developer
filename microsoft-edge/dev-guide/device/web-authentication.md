@@ -137,8 +137,7 @@ Here is a snapshot of Web Authentication API support as of EdgeHTML 15 (Windows 
     dictionary ScopedCredentialOptions {
         unsigned long timeoutSeconds;
         USVString rpId;
-        sequence<ScopedCredentialDescriptor> excludeList;
-        WebAuthnExtensions extensions;
+        sequence<ScopedCredentialDescriptor> excludeList;        WebAuthnExtensions extensions;
     };
 
     interface WebAuthnAssertion {
@@ -197,4 +196,4 @@ Here is a snapshot of Web Authentication API support as of EdgeHTML 15 (Windows 
 
 ## Specification
 
-[Web Authentication: A Web API for accessing scoped credentials 1](http://w3c.github.io/webauthn/)
+[Web Authentication: A Web API for accessing scoped credentials](http://w3c.github.io/webauthn/)
