@@ -100,6 +100,8 @@ Once you receive the assertion on the server, you will need to validate the sign
 
 - The currently logged in Windows user account must be configured to support at least a PIN, and preferably face or fingerprint biometrics. This is to ensure that Windows can authenticate the access to the TPM.
 
+- Of the [predefined extensions](http://www.w3.org/TR/webauthn/#extension-predef) described in the spec, Microsoft Edge only supports the [FIDO AppId](http://www.w3.org/TR/webauthn/#extension-appid) (`webauthn_txAuthSimple`) at this time.
+
 ### IDL support
 Here is a snapshot of Web Authentication API support as of EdgeHTML 15 (Windows 10 Creators Update, build #####, MM/2017).
 ```
@@ -107,8 +109,7 @@ Here is a snapshot of Web Authentication API support as of EdgeHTML 15 (Windows 
         Promise<ScopedCredentialInfo> makeCredential(
             Account accountInformation,
             sequence<ScopedCredentialParameters> cryptoParameters,
-
-BufferSource attestationChallenge,
+            BufferSource attestationChallenge,
             optional ScopedCredentialOptions options
         );
         Promise<WebAuthnAssertion> getAssertion(
@@ -156,7 +157,7 @@ BufferSource attestationChallenge,
         WebAuthnExtensions extensions;
     };
 
-    dictionary WebAuthnExtensions {
+    dictionary WebAuthnExtensions {  // Currently only webauthn_txAuthSimple is supported
     };
 
     dictionary ClientData {
