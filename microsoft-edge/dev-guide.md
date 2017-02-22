@@ -73,9 +73,17 @@ Sites already using CSP 1 should continue to work with Microsoft Edge support fo
 
 #### Web Authentication
 Edge support for the emerging [Web Authentication API](./dev-guide/device/web-authentication.md) using [Windows Hello](http://go.microsoft.com/fwlink/p/?LinkID=624961) biometrics has been updated with the following changes:
- - The experimental Web Authentication API is turned off by default ships behind a flag (type `about:flags` in your address bar to turn on the feature).
- - You can now use the non-prefixed, standards-based APIs defined in the specification. The current Edge implementation [maps to the API definitions](http://www.w3.org/TR/2016/WD-webauthn-20160928/#idl-index) of a recent snapshot version and will continue to evolve with the spec.
- - The original MS-prefixed APIs (the `MSCredentials` interface and related) are still available in Edge (on by default, not behind flag) but are no longer getting updated and are likely to be removed in the future. The companion [webauthn.js polyfill](https://github.com/adrianba/fido-snippets/blob/master/polyfill/webauthn.js) is also still available, but unlikely to receive further updates.
+- The initial implementation of the experimental Web Authentication API introduced in [EdgeHTML 14](https://blogs.windows.com/msedgedev/2016/08/04/introducing-edgehtml-14/#TVSCzKDkG4jCI5mt.97) (Windows 10 Anniversary Update, build 10240, 7/2016) was exposed through MS- prefixed APIs (the [MSCredentials](https://msdn.microsoft.com/library/mt697639) interface). While these APIs are still available in EdgeHTML 15, they are now deprecated in favor of the non-prefixed, standards-based APIs and behaviors defined in a more [recent snapshot](http://www.w3.org/TR/2016/WD-webauthn-20160928) of the specification, and are likely to continue changing as the spec matures toward standardization.
+
+- The latest Edge implementation is turned off by default and ships behind a flag (type `about:flags` in your address bar to turn on the feature).
+
+- Microsoft Edge does not yet support external credentials like USB keys or Bluetooth devices. The current API is limited to embedded credentials stored in the TPM. A software fallback is used if TPM is not available on the device.
+
+- The currently logged in Windows user account must be configured to support at least a PIN, and preferably face or fingerprint biometrics. This is to ensure that Windows can authenticate the access to the TPM.
+
+- Of the [predefined extensions](http://www.w3.org/TR/webauthn/#extension-predef) described in the spec, Microsoft Edge only supports the [FIDO AppId](http://www.w3.org/TR/webauthn/#extension-appid) (`webauthn_txAuthSimple`) at this time.
+
+- The `timeoutSeconds` option is not currently evaluated
 
 #### WebDriver
 
