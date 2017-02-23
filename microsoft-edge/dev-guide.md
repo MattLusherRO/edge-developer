@@ -54,9 +54,9 @@ For more info, see [Introducing WebRTC 1.0 and interoperable real-time communica
 
 #### WebVR
 
-Microsoft Edge now has support for WebVR, an experimental API that connects virtual reality (VR) head mounted displays and Edge. This connection enables VR content to be experienced within a website, meaning immersive VR experiences are no longer limited to desktop applications. 
+Microsoft Edge now has support for [WebVR](https://w3c.github.io/webvr/), an experimental API that connects Windows Mixed Reality head mounted displays and Edge. This connection enables VR content to be experienced within a website, meaning immersive VR experiences are no longer limited to desktop applications. 
 
-Virtual reality in Edge is handled with WebGL, a JavaScript API for rendering 3D and 2D graphics. WebGL applications and applications built with WebGL libraries like Three.JS are supported. Once connected, WebVR sends visuals corresponding to the position and sensor information around the headset. The WebVR API also supports gamepad controls thanks to an extensions to the [Gamepad API](./dev-guide/dom/gamepad-api.md).
+Virtual reality in Edge is powered by WebGL, a JavaScript API for rendering 3D and 2D graphics. WebGL applications and applications built with WebGL libraries like BabylonJS are supported. Once connected, WebVR sends visuals corresponding to the position and sensor information around the headset. The WebVR API also supports spatial controllers thanks to an extension to the [Gamepad API](./dev-guide/dom/gamepad-api.md).
 
 ### Updated features
 
