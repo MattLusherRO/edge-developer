@@ -355,7 +355,7 @@ If your native messaging program consists of only a UWP app component, follow th
 
 2. Copy the `Extension` folder to the created `AppX` folder.
 
-### UWP app with Desktop Bridge perperation
+### UWP app with Desktop Bridge preperation
 
 1.	Build and deploy the UWP app.
 
