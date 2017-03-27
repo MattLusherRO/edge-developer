@@ -108,6 +108,12 @@ GET | /session/{session id}/window/handles | [Get Window Handles](https://w3c.gi
 
 For more info and the status of other WebDriver features, check out [WebDriver commands](./webdriver-commands.md).
 
+## New APIs in EdgeHTML 15
+
+View the table below for a list of new APIs supported in EdgeHTML 15.
+
+<div class="codepen-wrap"><p data-height="300" data-theme-id="23761" data-slug-hash="evRjjZ" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-editable="true" class="codepen">See this example by <a href="https://codepen.io/MicrosoftEdgeDocumentation">Microsoft Edge Docs</a> on <a href="http://codepen.io/MicrosoftEdgeDocumentation/pen/evRjjZ">CodePen</a>.</p></div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
 
 ## Previous EdgeHTML releases
 [EdgeHTML 13 / Windows build 14393 (11/2015)](https://blogs.windows.com/msedgedev/2015/11/16/introducing-edgehtml-13-our-first-platform-update-for-microsoft-edge/#TuusgqsWj8X6pDcD.97)
