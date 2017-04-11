@@ -26,3 +26,7 @@ Updates to the [Selection  API](./dev-guide/HTML5/selection-API.md) | 14393
 [Streams API](./dev-guide/performance/streams-API.md) | 14393
 [Web Authentication and Windows Hello](./dev-guide/device/web-authentication.md) | 14393
 [Web Notifications API](./dev-guide/device/web-Notifications-API.md)| 14393
+
+
+<iframe height='300' scrolling='no' title='Dino game final' src='//codepen.io/MicrosoftEdgeDocumentation/embed/NpKejy/?height=300&theme-id=23761&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/NpKejy/'>Dino game final</a> by Microsoft Edge Docs (<a href='http://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
